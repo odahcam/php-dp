@@ -1,0 +1,19 @@
+{
+    "name": "odahcam/dp",
+    "version": "0.1.0",
+    "description": "Design Patterns implementations for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luiz Barni",
+            "email": "machado@odahcam.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Odahcam\\DP\\": "src/"
+        }
+    }
+}
