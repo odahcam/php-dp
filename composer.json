@@ -1,6 +1,5 @@
 {
     "name": "odahcam/dp",
-    "version": "0.1.0",
     "description": "Design Patterns implementations for PHP.",
     "type": "library",
     "license": "MIT",
