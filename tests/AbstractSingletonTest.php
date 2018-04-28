@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Odahcam\DP\Tests;
 
+use Odahcam\DP;
 use PHPUnit\Framework\TestCase;
 
 /**
