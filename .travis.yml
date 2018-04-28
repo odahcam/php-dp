@@ -11,6 +11,7 @@ php:
 before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install -n
+  - export CODACY_PROJECT_TOKEN=1e1f6d306c2b4a8f9224daded9c71595
 
 script:
   - php vendor/bin/phpunit --coverage-clover build/coverage/xml
