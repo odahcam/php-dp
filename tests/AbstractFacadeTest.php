@@ -8,7 +8,7 @@ use Odahcam\DP;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass DP\FacadeTrait
+ * @coversDefaultClass \Odahcam\DP\FacadeTrait
  */
 final class AbstractFacadeTest extends TestCase
 {
