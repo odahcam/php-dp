@@ -10,10 +10,13 @@
             "email": "machado@odahcam.com"
         }
     ],
-    "require": {},
+    "require": {
+        "phpunit/phpunit": "^7.1"
+    },
     "autoload": {
         "psr-4": {
-            "Odahcam\\DP\\": "src/"
+            "Odahcam\\DP\\": "src/",
+            "Odahcam\\DP\\Tests\\": "tests/"
         }
     }
 }
