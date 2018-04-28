@@ -4,13 +4,12 @@ namespace Odahcam\DP; // Design Patterns
 
 /**
  * Singleton pattern.
- *
- * @author Luiz Barni
  */
-abstract class AbstractSingleton
+trait SingletonTrait
 {
     /**
      * The stored instance.
+     * 
      * @var object $instance A instância única dessa classe.
      */
     protected static $instance = null;

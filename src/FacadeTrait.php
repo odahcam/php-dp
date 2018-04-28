@@ -2,49 +2,56 @@
 
 namespace Odahcam\DP;
 
-abstract class AbstractFacade extends AbstractSingleton
+/**
+ * Abstracted Facade pattern.
+ */
+trait FacadeTrait
 {
-    /**
-     * The not fake object.
-     *
-     * @var object
-     */
-    protected $faking;
+    use SingletonTrait;
 
     /**
      * Who is this class faking for, full qualifyied className.
      *
      * @var string
      */
-    protected static $fakingFor;
+    // protected static $inside;
 
     /**
-     * Construtor do tipo protegido previne que uma nova instância da
-     * Classe seja criada através do operador `new` de fora dessa classe.
+     * Creates a new instance of static.
      */
-    protected function __construct()
+    private static function createNewInstance()
     {
-        $this->faking = new static::$fakingFor;
+        $needed_property = 'inside';
+
+        if (!property_exists(static::class, $needed_property)) 
+        {
+            throw new Exception\InsideNotDefiend(static::class . '::$' . $needed_property . ' is not defined! Please provide a full qualified classname for the property static::$' . $needed_property . '.', 1);
+        }
+
+        return new static::$inside;
     }
 
     /**
-     *
+     * {@inheritDoc}
      */
-    public function getFaking()
+    public static function getInstance()
     {
-        return $this->faking;
+        if (static::$instance === null) {
+            static::$instance = self::createNewInstance();
+        }
+
+        return static::$instance;
     }
 
     /**
      * Handle dynamic, static calls to the object.
      *
      * @param  string  $method
-     * @param  array  $args
-     * @return mixed
+     * @param  array   $args
      */
     public static function __callStatic($method, $args)
     {
-        $instance = static::getInstance()->getFaking();
+        $instance = static::getInstance();
 
         switch (count($args)) {
             case 0:
