@@ -7,16 +7,42 @@ namespace Odahcam\DP\Tests;
 use Odahcam\DP;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @coversDefaultClass \Odahcam\DP\FacadeTrait
+ */
 final class AbstractFacadeTest extends TestCase
 {
+    /**
+     * @covers ::getInstance
+     * @covers ::createNewInstance
+     */
     public function testSingleInstanceFacade(): void
     {        
         $this->assertEquals(
             FacadeTest::getInstance(), 
             FacadeTest::getInstance()
         );
+
+        $this->assertInstanceOf(
+            InstantiableTest::class,
+            FacadeTest::getInstance()
+        );
     }
 
+    /**
+     * @coversNothing
+     */
+    public function testInsideException()
+    {
+        $this->expectException(DP\Exception\InsideNotDefiend::class);
+
+        FacadeFailTest::getInstance();
+    }
+
+    /**
+     * @covers ::__callStatic
+     * @covers ::createNewInstance
+     */
     public function testSeparatedInstances()
     {
         FacadeTest::increments(7);
@@ -29,20 +55,5 @@ final class AbstractFacadeTest extends TestCase
             FacadeTest::getNumber(), 
             Facade2Test::getNumber()
         );
-    }
-
-    public function testRightClassInstance()
-    {    
-        $this->assertInstanceOf(
-            InstantiableTest::class,
-            FacadeTest::getInstance()
-        );
-    }
-
-    public function testInsideException()
-    {
-        $this->expectException(DP\Exception\InsideNotDefiend::class);
-
-        FacadeFailTest::getInstance();
     }
 }

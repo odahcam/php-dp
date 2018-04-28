@@ -6,6 +6,9 @@ namespace Odahcam\DP\Tests;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @coversDefaultClass \Odahcam\DP\SingletonTrait
+ */
 final class AbstractSingletonTest extends TestCase
 {
     /** @var array */
@@ -20,14 +23,9 @@ final class AbstractSingletonTest extends TestCase
         ];
     }
 
-    public function testSingleInstance(): void
-    {
-        $this->instances[0]->increments(1);
-        $this->instances[2]->increments(2);
-
-        $this->assertEquals(4, $this->instances[1]->getNumber());
-    }
-
+    /**
+     * @covers ::getInstance
+     */
     public function testIfAllInstancesAreTheSame(): void
     {
         $this->assertEquals(
@@ -46,6 +44,9 @@ final class AbstractSingletonTest extends TestCase
         );
     }
 
+    /**
+     * @covers ::getInstance
+     */
     public function testInstanceOfs(): void
     {
         $this->assertInstanceOf(
@@ -62,5 +63,16 @@ final class AbstractSingletonTest extends TestCase
             SingletonTest::class,
             $this->instances[2]
         );
+    }
+
+    /**
+     * @coversNothing
+     */
+    public function testSingleInstance(): void
+    {
+        $this->instances[0]->increments(1);
+        $this->instances[2]->increments(2);
+
+        $this->assertEquals(4, $this->instances[1]->getNumber());
     }
 }
