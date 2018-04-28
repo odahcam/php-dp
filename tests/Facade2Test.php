@@ -9,7 +9,7 @@ use Odahcam\DP;
 /**
  * Implemented Singleton test class.
  */
-final class FacadeTest
+final class Facade2Test
 {
     use DP\FacadeTrait;
 

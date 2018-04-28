@@ -9,9 +9,10 @@ use Odahcam\DP;
 /**
  * Implemented Singleton test class.
  */
-final class FacadeTest
+final class FacadeFailTest
 {
     use DP\FacadeTrait;
 
-    protected static $inside = InstantiableTest::class;
+    // forgets to define
+    // protected static $inside = InstantiableTest::class;
 }

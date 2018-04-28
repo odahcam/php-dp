@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Odahcam\DP\Tests;
 
-use Odahcam\DP\AbstractSingleton;
+use Odahcam\DP;
 
 /**
  * Implemented Singleton test class.
  */
-final class SingletonTest extends AbstractSingleton
+final class SingletonTest
 {
-    use NumberIncrementTrait;
+    use DP\SingletonTrait, NumberIncrementTrait;
 }
