@@ -1,29 +1,15 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace Odahcam\DP\Tests;
+
+// uses nothing.
 
 /**
  * Implemented Singleton test class.
  */
 final class InstantiableTest
 {
-    private $number = 1;
-
-    /**
-     * Increments a value to a private number.
-     */
-    public function increments(int $num): void
-    {
-        $this->number += $num;
-    }
-
-    /**
-     * Returns the private number.
-     */
-    public function getNumber(): int
-    {
-        return $this->number;
-    }
+    use NumberIncrementTrait;
 }
