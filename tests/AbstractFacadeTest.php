@@ -30,7 +30,7 @@ final class AbstractFacadeTest extends TestCase
     }
 
     /**
-     * @coversNothing
+     * @covers ::createNewInstance
      */
     public function testInsideException()
     {
