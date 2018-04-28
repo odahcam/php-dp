@@ -14,10 +14,10 @@ final class AbstractSingletonTest extends TestCase
         $instance2 = SingletonTest::getInstance();
         $instance3 = SingletonTest::getInstance();
 
-        $instance1->increment(2);
-        $instance3->increment(2);
+        $instance1->increments(2);
+        $instance3->increments(2);
 
-        $this->assertEquals(4, $instance2->getNumber());
+        $this->assertEquals(7, $instance1->getNumber());
         
         $this->assertEquals(
             SingletonTest::getInstance(), 

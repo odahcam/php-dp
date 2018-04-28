@@ -16,7 +16,7 @@ final class SingletonTest extends AbstractSingleton
     /**
      * Increments a value to a private number.
      */
-    public function increment(int $num = 0): void
+    public function increments(int $num = 0): void
     {
         $this->_number += $num;
     }

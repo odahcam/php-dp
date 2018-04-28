@@ -14,7 +14,7 @@ final class InstantiableTest
     /**
      * Increments a value to a private number.
      */
-    public function increment(int $num): void
+    public function increments(int $num): void
     {
         $this->number += $num;
     }

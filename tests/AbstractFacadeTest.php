@@ -10,7 +10,7 @@ final class AbstractFacadeTest extends TestCase
 {
     public function testSingleInstanceFacade(): void
     {
-        FacadeTest::increment(1);
+        FacadeTest::increments(1);
         
         $this->assertEquals(2, FacadeTest::getNumber());
         
