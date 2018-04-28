@@ -66,7 +66,7 @@ final class AbstractSingletonTest extends TestCase
     }
 
     /**
-     * @covers ::__callStatic
+     * @coversNothing
      */
     public function testSingleInstance(): void
     {
