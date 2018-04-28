@@ -7,7 +7,7 @@ namespace Odahcam\DP\Tests;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass DP\FacadeTrait
+ * @coversDefaultClass DP\SingletonTrait
  */
 final class AbstractSingletonTest extends TestCase
 {
