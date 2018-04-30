@@ -3,9 +3,13 @@
 namespace Odahcam\DP; // Design Patterns
 
 /**
- * Singleton pattern.
+ * How static access should be implemented.
  */
 interface StaticAccessInterface
 { 
-    static function __callStatic(string $method, array $args = null);
+    /**
+     * Works like a proxy, calling a instance and applying the 
+     * statically requested `$method` in the instance.
+     */
+    static function __callStatic(string $method, array $args = null)/* : any */;
 }
