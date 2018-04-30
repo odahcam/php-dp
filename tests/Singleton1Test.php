@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Odahcam\DP\Tests;
 
-// uses nothing.
+use Odahcam\DP;
 
 /**
  * Implemented Singleton test class.
  */
-final class InstantiableTest
+final class Singleton1Test
 {
-    use Resources\NumberIncrementTrait;
+    use DP\SingletonTrait, Resources\NumberIncrementTrait;
 }

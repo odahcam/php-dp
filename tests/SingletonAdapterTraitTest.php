@@ -8,35 +8,45 @@ use Odahcam\DP;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass \Odahcam\DP\FacadeTrait
+ * @coversDefaultClass \Odahcam\DP\SingletonAdapterTrait
  */
-final class AbstractFacadeTest extends TestCase
+final class SingletonAdapterTraitTest extends TestCase
 {
     /**
      * @covers ::getInstance
      * @covers ::createNewInstance
      */
-    public function testSingleInstanceFacade(): void
+    public function testSingleAdaptedInstance(): void
     {        
         $this->assertEquals(
-            FacadeTest::getInstance(), 
-            FacadeTest::getInstance()
+            Facade1Test::getInstance(), 
+            Facade1Test::getInstance()
         );
 
         $this->assertInstanceOf(
             InstantiableTest::class,
-            FacadeTest::getInstance()
+            Facade1Test::getInstance()
         );
     }
 
     /**
      * @covers ::createNewInstance
      */
-    public function testInsideException()
+    public function testInsideNotDefiendException()
     {
         $this->expectException(DP\Exception\InsideNotDefiend::class);
 
         FacadeFailTest::getInstance();
+    }
+
+    /**
+     * @covers ::createNewInstance
+     */
+    public function testInvalidPropertyException()
+    {
+        $this->expectException(DP\Exception\InvalidProperty::class);
+
+        FacadeFail2Test::getInstance();
     }
 
     /**
@@ -45,14 +55,14 @@ final class AbstractFacadeTest extends TestCase
      */
     public function testSeparatedInstances()
     {
-        FacadeTest::increments(7);
+        Facade1Test::increments(7);
         Facade2Test::increments(5);
         
-        $this->assertEquals(8, FacadeTest::getNumber());
+        $this->assertEquals(8, Facade1Test::getNumber());
         $this->assertEquals(6, Facade2Test::getNumber());
 
         $this->assertNotEquals(
-            FacadeTest::getNumber(), 
+            Facade1Test::getNumber(), 
             Facade2Test::getNumber()
         );
     }

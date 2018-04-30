@@ -11,7 +11,7 @@ use Odahcam\DP;
  */
 final class FacadeFailTest
 {
-    use DP\FacadeTrait;
+    use DP\SingletonAdapterTrait;
 
     // forgets to define
     // protected static $inside = InstantiableTest::class;

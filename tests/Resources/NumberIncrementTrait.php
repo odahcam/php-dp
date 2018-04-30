@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Odahcam\DP\Tests;
+namespace Odahcam\DP\Tests\Resources;
 
 trait NumberIncrementTrait
 {
@@ -11,7 +11,7 @@ trait NumberIncrementTrait
     /**
      * Increments a value to a private number.
      */
-    public function increments(int $num): void
+    public function increments(?int $num = 0): void
     {
         $this->number += $num;
     }
