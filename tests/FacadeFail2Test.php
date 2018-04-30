@@ -14,5 +14,5 @@ final class FacadeFail2Test
     use DP\SingletonAdapterTrait;
 
     // wrongly defined
-    protected static $inside = null;
+    protected static $adapt = null;
 }

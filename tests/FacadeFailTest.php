@@ -14,5 +14,5 @@ final class FacadeFailTest
     use DP\SingletonAdapterTrait;
 
     // forgets to define
-    // protected static $inside = InstantiableTest::class;
+    // protected static $adapt = InstantiableTest::class;
 }

@@ -32,9 +32,9 @@ final class SingletonAdapterTraitTest extends TestCase
     /**
      * @covers ::createNewInstance
      */
-    public function testInsideNotDefiendException()
+    public function testUndefinedAdaptPropertyException()
     {
-        $this->expectException(DP\Exception\InsideNotDefiend::class);
+        $this->expectException(DP\Exception\UndefinedAdaptProperty::class);
 
         FacadeFailTest::getInstance();
     }

@@ -13,5 +13,5 @@ final class Facade2Test
 {
     use DP\SingletonAdapterTrait;
 
-    protected static $inside = InstantiableTest::class;
+    protected static $adapt = InstantiableTest::class;
 }
