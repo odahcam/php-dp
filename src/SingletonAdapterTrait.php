@@ -3,7 +3,7 @@
 namespace Odahcam\DP;
 
 /**
- * Abstracted Facade pattern.
+ * Handles a `$inside` class as a Singleton.
  */
 trait SingletonAdapterTrait
 {
