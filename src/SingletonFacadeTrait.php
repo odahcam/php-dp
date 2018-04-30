@@ -10,14 +10,14 @@ namespace Odahcam\DP;
  * the given class, but just wraps it to adapt it's usage
  * as a singleton-like.
  */
-trait SingletonAdapterTrait
+trait SingletonFacadeTrait
 {
     use SingletonTrait, PropertyValidationTrait;
 
     /**
      * Class reference property name.
      */
-    private static $reference_prop_name = 'adapt';
+    private static $reference_prop_name = 'singleton';
 
     /**
      * Creates a new instance of static.
@@ -28,6 +28,6 @@ trait SingletonAdapterTrait
 
         static::validateProperty($reference_prop_name);
 
-        return new static::$$reference_prop_name;
+        return static::$$reference_prop_name::getInstance();
     }
 }
