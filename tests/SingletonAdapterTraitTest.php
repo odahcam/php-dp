@@ -14,7 +14,7 @@ final class SingletonAdapterTraitTest extends TestCase
 {
     /**
      * @covers ::getInstance
-     * @covers ::createNewInstance
+     * @covers ::newInstance
      */
     public function testSingleAdaptedInstance(): void
     {        
@@ -30,7 +30,7 @@ final class SingletonAdapterTraitTest extends TestCase
     }
 
     /**
-     * @covers ::createNewInstance
+     * @covers ::newInstance
      */
     public function testUndefinedAdaptPropertyException()
     {
@@ -40,7 +40,7 @@ final class SingletonAdapterTraitTest extends TestCase
     }
 
     /**
-     * @covers ::createNewInstance
+     * @covers ::newInstance
      */
     public function testInvalidPropertyException()
     {
@@ -51,7 +51,7 @@ final class SingletonAdapterTraitTest extends TestCase
 
     /**
      * @covers ::__callStatic
-     * @covers ::createNewInstance
+     * @covers ::newInstance
      */
     public function testSeparatedInstances()
     {

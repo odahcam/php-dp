@@ -17,7 +17,7 @@ trait SingletonTrait
     /**
      * Creates a new instance of static.
      */
-    private static function createNewInstance(): self
+    private static function newInstance(): self
     {
         return new static;
     }
@@ -30,7 +30,7 @@ trait SingletonTrait
     public static function getInstance()/*: self */
     {
         if (static::$instance === null) {
-            static::$instance = static::createNewInstance();
+            static::$instance = static::newInstance();
         }
 
         return static::$instance;

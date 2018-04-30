@@ -24,7 +24,7 @@ trait SingletonAdapterTrait
     /**
      * Creates a new instance of static.
      */
-    private static function createNewInstance()
+    private static function newInstance()
     {
         $needed_property = 'inside';
 
