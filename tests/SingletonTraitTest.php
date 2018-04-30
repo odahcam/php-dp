@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Odahcam\DP\Tests;
 
+use Odahcam\DP\Tests\Resources\{
+    Singleton1Test,
+    Singleton2Test
+};
 use PHPUnit\Framework\TestCase;
 
 /**

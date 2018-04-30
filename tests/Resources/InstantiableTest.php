@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Odahcam\DP\Tests;
+namespace Odahcam\DP\Tests\Resources;
 
 // uses nothing.
 
@@ -11,5 +11,5 @@ namespace Odahcam\DP\Tests;
  */
 final class InstantiableTest
 {
-    use Resources\NumberIncrementTrait;
+    use NumberIncrementTrait;
 }

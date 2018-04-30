@@ -5,6 +5,13 @@ declare(strict_types=1);
 namespace Odahcam\DP\Tests;
 
 use Odahcam\DP;
+use Odahcam\DP\Tests\Resources\{
+    Facade1Test, 
+    Facade2Test, 
+    FacadeFail1Test, 
+    FacadeFail2Test, 
+    InstantiableTest
+};
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -34,9 +41,9 @@ final class SingletonAdapterTraitTest extends TestCase
      */
     public function testUndefinedAdaptPropertyException()
     {
-        $this->expectException(DP\Exception\UndefinedAdaptProperty::class);
+        $this->expectException(DP\Exception\UndefinedProperty::class);
 
-        FacadeFailTest::getInstance();
+        FacadeFail1Test::getInstance();
     }
 
     /**

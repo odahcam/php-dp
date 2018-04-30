@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Odahcam\DP\Tests;
+namespace Odahcam\DP\Tests\Resources;
 
 use Odahcam\DP;
 
@@ -11,5 +11,5 @@ use Odahcam\DP;
  */
 final class Singleton1Test
 {
-    use DP\SingletonTrait, Resources\NumberIncrementTrait;
+    use DP\SingletonTrait, NumberIncrementTrait;
 }
