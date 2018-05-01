@@ -62,11 +62,19 @@ final class SingletonAdapterTraitTest extends TestCase
      */
     public function testSeparatedInstances()
     {
+        // resets the number to zero
+        SingletonAdaptedOne::increments(-SingletonAdaptedOne::getNumber());
+        SingletonAdaptedTwo::increments(-SingletonAdaptedTwo::getNumber());
+        
+        $this->assertEquals(0, SingletonAdaptedOne::getNumber());
+        $this->assertEquals(0, SingletonAdaptedTwo::getNumber());
+
+        // sums new numbers
         SingletonAdaptedOne::increments(7);
         SingletonAdaptedTwo::increments(5);
         
-        $this->assertEquals(8, SingletonAdaptedOne::getNumber());
-        $this->assertEquals(6, SingletonAdaptedTwo::getNumber());
+        $this->assertEquals(7, SingletonAdaptedOne::getNumber());
+        $this->assertEquals(5, SingletonAdaptedTwo::getNumber());
 
         $this->assertNotEquals(
             SingletonAdaptedOne::getNumber(), 

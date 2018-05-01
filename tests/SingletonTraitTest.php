@@ -90,10 +90,16 @@ final class SingletonTraitTest extends TestCase
      */
     public function testSingleInstance(): void
     {
+        // resets the number to zero
+        $this->instances[0]->increments(-$this->instances[1]->getNumber());
+        
+        $this->assertEquals(0, $this->instances[0]->getNumber());
+
+        // sums new numbers
         $this->instances[0]->increments(1);
         $this->instances[2]->increments(2);
         $this->instances[2]->increments(null);
 
-        $this->assertEquals(4, $this->instances[1]->getNumber());
+        $this->assertEquals(3, $this->instances[1]->getNumber());
     }
 }

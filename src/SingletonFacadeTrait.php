@@ -22,7 +22,7 @@ trait SingletonFacadeTrait
     /**
      * Creates a new instance of static.
      */
-    private static function newInstance()
+    public static function getInstance()
     {
         $reference_prop_name = static::$reference_prop_name;
 
