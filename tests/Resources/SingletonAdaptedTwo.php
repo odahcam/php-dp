@@ -9,10 +9,9 @@ use Odahcam\DP;
 /**
  * Implemented Singleton test class.
  */
-final class FacadeFail2Test
+final class SingletonAdaptedTwo implements DP\SingletonInterface
 {
     use DP\SingletonAdapterTrait;
 
-    // wrongly defined
-    protected static $adapt = null;
+    protected static $adapt = InstantiableTest::class;
 }

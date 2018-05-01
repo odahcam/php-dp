@@ -9,7 +9,7 @@ use Odahcam\DP;
 /**
  * Implemented Singleton test class.
  */
-final class Singleton2Test
+final class SingletonTwo implements DP\SingletonInterface
 {
     use DP\SingletonTrait, NumberIncrementTrait;
 }

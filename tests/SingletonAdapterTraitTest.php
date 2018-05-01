@@ -6,10 +6,10 @@ namespace Odahcam\DP\Tests;
 
 use Odahcam\DP;
 use Odahcam\DP\Tests\Resources\{
-    Facade1Test, 
-    Facade2Test, 
-    FacadeFail1Test, 
-    FacadeFail2Test, 
+    SingletonAdaptedOne, 
+    SingletonAdaptedTwo, 
+    SingletonAdaptedFailOne, 
+    SingletonAdaptedFailTwo, 
     InstantiableTest
 };
 use PHPUnit\Framework\TestCase;
@@ -26,13 +26,13 @@ final class SingletonAdapterTraitTest extends TestCase
     public function testSingleAdaptedInstance(): void
     {        
         $this->assertEquals(
-            Facade1Test::getInstance(), 
-            Facade1Test::getInstance()
+            SingletonAdaptedOne::getInstance(), 
+            SingletonAdaptedOne::getInstance()
         );
 
         $this->assertInstanceOf(
             InstantiableTest::class,
-            Facade1Test::getInstance()
+            SingletonAdaptedOne::getInstance()
         );
     }
 
@@ -43,7 +43,7 @@ final class SingletonAdapterTraitTest extends TestCase
     {
         $this->expectException(DP\Exception\UndefinedProperty::class);
 
-        FacadeFail1Test::getInstance();
+        SingletonAdaptedFailOne::getInstance();
     }
 
     /**
@@ -53,7 +53,7 @@ final class SingletonAdapterTraitTest extends TestCase
     {
         $this->expectException(DP\Exception\InvalidProperty::class);
 
-        FacadeFail2Test::getInstance();
+        SingletonAdaptedFailTwo::getInstance();
     }
 
     /**
@@ -62,15 +62,15 @@ final class SingletonAdapterTraitTest extends TestCase
      */
     public function testSeparatedInstances()
     {
-        Facade1Test::increments(7);
-        Facade2Test::increments(5);
+        SingletonAdaptedOne::increments(7);
+        SingletonAdaptedTwo::increments(5);
         
-        $this->assertEquals(8, Facade1Test::getNumber());
-        $this->assertEquals(6, Facade2Test::getNumber());
+        $this->assertEquals(8, SingletonAdaptedOne::getNumber());
+        $this->assertEquals(6, SingletonAdaptedTwo::getNumber());
 
         $this->assertNotEquals(
-            Facade1Test::getNumber(), 
-            Facade2Test::getNumber()
+            SingletonAdaptedOne::getNumber(), 
+            SingletonAdaptedTwo::getNumber()
         );
     }
 }

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Odahcam\DP\Tests;
 
 use Odahcam\DP\Tests\Resources\{
-    Singleton1Test,
-    Singleton2Test
+    SingletonOne,
+    SingletonTwo
 };
 use PHPUnit\Framework\TestCase;
 
@@ -21,10 +21,10 @@ final class SingletonTraitTest extends TestCase
     protected function setUp()
     {
         $this->instances = [
-            Singleton1Test::getInstance(),
-            Singleton1Test::getInstance(),
-            Singleton1Test::getInstance(),  
-            Singleton2Test::getInstance(),    
+            SingletonOne::getInstance(),
+            SingletonOne::getInstance(),
+            SingletonOne::getInstance(),  
+            SingletonTwo::getInstance(),    
         ];
     }
 
@@ -34,27 +34,27 @@ final class SingletonTraitTest extends TestCase
     public function testIfAllInstancesAreTheSame(): void
     {
         $this->assertEquals(
-            Singleton1Test::getInstance(), 
+            SingletonOne::getInstance(), 
             $this->instances[0]
         );
 
         $this->assertEquals(
-            Singleton1Test::getInstance(), 
+            SingletonOne::getInstance(), 
             $this->instances[1]
         );
 
         $this->assertEquals(
-            Singleton1Test::getInstance(), 
+            SingletonOne::getInstance(), 
             $this->instances[2]
         );
 
         $this->assertEquals(
-            Singleton2Test::getInstance(), 
+            SingletonTwo::getInstance(), 
             $this->instances[3]
         );
 
         $this->assertNotEquals(
-            Singleton1Test::getInstance(), 
+            SingletonOne::getInstance(), 
             $this->instances[3]
         );
     }
@@ -65,22 +65,22 @@ final class SingletonTraitTest extends TestCase
     public function testInstanceOfs(): void
     {
         $this->assertInstanceOf(
-            Singleton1Test::class,
+            SingletonOne::class,
             $this->instances[0]
         );
 
         $this->assertInstanceOf(
-            Singleton1Test::class,
+            SingletonOne::class,
             $this->instances[1]
         );
 
         $this->assertInstanceOf(
-            Singleton1Test::class,
+            SingletonOne::class,
             $this->instances[2]
         );
 
         $this->assertInstanceOf(
-            Singleton2Test::class,
+            SingletonTwo::class,
             $this->instances[3]
         );
     }
