@@ -19,23 +19,23 @@ interface SingletonInterface
      *
      * @return static
      */
-    static function getInstance(): self;
+    static function getInstance();
 
     /**
      * Construtor do tipo protegido previne que uma nova instância da
      * Classe seja criada através do operador `new` de fora dessa classe.
      */
-    function __construct(): void;
+    // protected function __construct(): void;
 
     /**
      * Método clone do tipo privado previne a clonagem dessa instância
      * da classe.
      */
-    function __clone(): void;
+    // private function __clone(): void;
 
     /**
      * Método unserialize do tipo privado para prevenir a desserialização
      * da instância dessa classe.
      */
-    function __wakeup() : void;
+    // private function __wakeup() : void;
 }
