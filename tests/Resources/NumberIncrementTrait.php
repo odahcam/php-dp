@@ -23,4 +23,20 @@ trait NumberIncrementTrait
     {
         return $this->number;
     }
+    
+    /**
+     * Calcs the average of the received arguments.
+     * Allows to test complex method calls like `::average(1, 2, 55, 4/* , ... */);`.
+     */
+    public function average(): ?int
+    {
+        $arguments = func_get_args();
+        
+        if (!$arguments || count($arguments) < 1) 
+        {
+            return null;
+        }
+        
+        return array_sum($arguments) / func_num_args();
+    }
 }
