@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Odahcam\DP\Tests;
+namespace Odahcam\DP\Tests\Resources;
 
 // uses nothing.
 

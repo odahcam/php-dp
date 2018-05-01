@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Odahcam\DP\Tests;
+namespace Odahcam\DP\Tests\Resources;
 
 use Odahcam\DP;
 
 /**
  * Implemented Singleton test class.
  */
-final class SingletonTest
+final class SingletonTwo implements DP\SingletonInterface
 {
     use DP\SingletonTrait, NumberIncrementTrait;
 }
