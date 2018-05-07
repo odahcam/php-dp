@@ -26,7 +26,7 @@ trait NumberIncrementTrait
     
     /**
      * Calcs the average of the received arguments.
-     * Allows to test complex method calls like `::average(1, 2, 55, 4/* , ... */);`.
+     * Allows to test complex method calls like `::average(1, 2, 55, 4[, agr[x]]);`.
      */
     public function average(): ?int
     {
