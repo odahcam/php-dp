@@ -81,4 +81,15 @@ final class SingletonAdapterTraitTest extends TestCase
             SingletonAdaptedTwo::getNumber()
         );
     }
+
+    /**
+     * @covers ::__callStatic
+     */
+    public function testCallStatic()
+    {
+        $this->assertEquals(7, SingletonAdaptedOne::average(7, 7));
+        $this->assertEquals(7, SingletonAdaptedOne::average(7, 7, 7));
+        $this->assertEquals(7, SingletonAdaptedOne::average(7, 7, 7, 7));
+        $this->assertEquals(7, SingletonAdaptedOne::average(7, 7, 7, 7, 7));
+    }
 }

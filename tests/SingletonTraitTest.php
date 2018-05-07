@@ -18,6 +18,9 @@ final class SingletonTraitTest extends TestCase
     /** @var array */
     protected $instances;
 
+    /**
+     * SetUps the tests.
+     */
     protected function setUp()
     {
         $this->instances = [
@@ -101,5 +104,16 @@ final class SingletonTraitTest extends TestCase
         $this->instances[2]->increments(null);
 
         $this->assertEquals(3, $this->instances[1]->getNumber());
+    }
+
+    /**
+     * @covers ::__callStatic
+     */
+    public function testCallStatic()
+    {
+        $this->assertEquals(7, $this->instances[1]->average(7, 7));
+        $this->assertEquals(7, $this->instances[1]->average(7, 7, 7));
+        $this->assertEquals(7, $this->instances[1]->average(7, 7, 7, 7));
+        $this->assertEquals(7, $this->instances[1]->average(7, 7, 7, 7, 7));
     }
 }
